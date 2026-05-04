@@ -1,0 +1,83 @@
+---
+const EMAIL    = 'your@email.com';
+const GITHUB   = 'https://github.com/yourusername';
+const LINKEDIN = 'https://linkedin.com/in/yourusername';
+---
+
+<section id="contact">
+  <div class="container">
+    <h2>Contact</h2>
+    <p class="subtitle">Want to get in touch? Reach out through any of these.</p>
+    <div class="links">
+      <a href={`mailto:${EMAIL}`}>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 7L2 7"/>
+        </svg>
+        <span>{EMAIL}</span>
+      </a>
+      <a href={GITHUB} target="_blank" rel="noopener noreferrer">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.1.82-.26.82-.58v-2.02c-3.34.72-4.04-1.61-4.04-1.61-.55-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02.005 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/>
+        </svg>
+        <span>GitHub</span>
+      </a>
+      <a href={LINKEDIN} target="_blank" rel="noopener noreferrer">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45C23.21 24 24 23.23 24 22.28V1.72C24 .77 23.21 0 22.22 0z"/>
+        </svg>
+        <span>LinkedIn</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  section {
+    padding: 6rem 2rem;
+    background: #f4f8fb;
+    text-align: center;
+  }
+
+  .container {
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #083b77;
+    margin-bottom: 1rem;
+  }
+
+  .subtitle {
+    color: #4a5568;
+    line-height: 1.6;
+    margin-bottom: 3rem;
+  }
+
+  .links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #0b4c9a;
+    padding: 0.85rem 1.5rem;
+    border: 1.5px solid #48cae4;
+    border-radius: 8px;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  a:hover {
+    background: #48cae4;
+    color: #083b77;
+  }
+</style>
