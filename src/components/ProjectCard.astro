@@ -1,0 +1,106 @@
+---
+interface Props {
+  name:        string;
+  description: string;
+  status:      'built' | 'in-progress';
+  url?:        string;
+  isPrivate?:  boolean;
+}
+
+const { name, description, status, url, isPrivate = false } = Astro.props;
+---
+
+<article class:list={['card', { muted: status === 'in-progress' }]}>
+  <div class="header">
+    <span class:list={['badge', status]}>
+      {status === 'built' ? 'Built' : 'In Progress'}
+    </span>
+    {isPrivate
+      ? <span class="lock" title="Private">🔒</span>
+      : url
+        ? <a class="gh-link" href={url} target="_blank" rel="noopener noreferrer" title="GitHub">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.1.82-.26.82-.58v-2.02c-3.34.72-4.04-1.61-4.04-1.61-.55-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49.99.1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02.005 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
+          </a>
+        : null
+    }
+  </div>
+  <h3>{name}</h3>
+  <p>{description}</p>
+</article>
+
+<style>
+  .card {
+    background: #ffffff;
+    border: 1px solid rgba(8, 59, 119, 0.12);
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(8, 59, 119, 0.12);
+  }
+
+  .card.muted {
+    opacity: 0.72;
+    filter: saturate(0.65);
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .badge {
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 0.2rem 0.65rem;
+    border-radius: 999px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .badge.built {
+    background: #48cae4;
+    color: #083b77;
+  }
+
+  .badge.in-progress {
+    border: 1.5px solid #48cae4;
+    color: #48cae4;
+  }
+
+  .lock {
+    font-size: 1rem;
+  }
+
+  .gh-link {
+    color: #0b4c9a;
+    display: flex;
+    align-items: center;
+    transition: color 0.2s;
+  }
+
+  .gh-link:hover {
+    color: #48cae4;
+  }
+
+  h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #0d1b2a;
+  }
+
+  p {
+    font-size: 0.9rem;
+    color: #4a5568;
+    line-height: 1.6;
+  }
+</style>
