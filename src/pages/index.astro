@@ -1,17 +1,31 @@
 ---
-
+import '../styles/global.css';
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rubenisme</title>
+  </head>
+  <body>
+    <div id="boat">
+      <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 32 4 C 48 20, 52 48, 48 60 L 16 60 C 12 48, 16 20, 32 4 Z" fill="#ffffff" />
+        <path d="M 32 12 C 42 24, 44 44, 42 56 L 22 56 C 20 44, 22 24, 32 12 Z" fill="#0ea5e9" />
+        <path d="M 26 26 L 38 26 L 38 42 L 26 42 Z" fill="#ffffff" />
+        <path d="M 26 26 Q 32 20 38 26 Z" fill="#ffffff" />
+        <path d="M 26 26 Q 32 24 38 26 L 36 28 Q 32 26 28 28 Z" fill="#0f172a" />
+        <rect x="26" y="46" width="12" height="6" rx="2" fill="#ef4444" />
+        <rect x="29" y="60" width="6" height="4" rx="1.5" fill="#1e293b" />
+      </svg>
+    </div>
+    <canvas id="trail"></canvas>
+
+    <p style="padding: 4rem 2rem;">Boat cursor test</p>
+
+    <script>
+      import '../scripts/boat-cursor.js';
+    </script>
+  </body>
 </html>

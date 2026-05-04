@@ -1,0 +1,64 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-deep-water:   #083b77;
+  --color-mid-water:    #0b4c9a;
+  --color-sky-water:    #1d7ddc;
+  --color-lagoon:       #48cae4;
+  --color-lagoon-muted: #90e0ef;
+  --color-sand:         #f4f8fb;
+  --color-sand-dark:    #eef4fa;
+  --color-navy-text:    #0d1b2a;
+  --color-muted-text:   #4a5568;
+  --color-white:        #ffffff;
+
+  --font-sans: system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+  color: var(--color-navy-text);
+  background-color: var(--color-sand);
+}
+
+body {
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Boat cursor */
+* {
+  cursor: none !important;
+}
+
+canvas#trail {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9;
+}
+
+#boat {
+  position: fixed;
+  width: 48px;
+  height: 48px;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  filter: drop-shadow(0px 8px 6px rgba(0, 0, 0, 0.35));
+}
+
+#boat svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
