@@ -1,0 +1,1 @@
+Place about-ocean.jpg here (aerial ocean/beach photo, e.g. from Unsplash)
