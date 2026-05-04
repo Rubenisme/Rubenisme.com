@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import Nav from '../components/Nav.astro';
 ---
 
 <html lang="en">
@@ -22,7 +23,10 @@ import '../styles/global.css';
     </div>
     <canvas id="trail"></canvas>
 
-    <p style="padding: 4rem 2rem;">Boat cursor test</p>
+    <Nav />
+    <main>
+      <p style="padding: 6rem 2rem;">Content coming soon</p>
+    </main>
 
     <script>
       import '../scripts/boat-cursor.js';

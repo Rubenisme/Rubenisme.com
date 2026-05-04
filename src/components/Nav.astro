@@ -1,0 +1,57 @@
+<nav>
+  <a class="logo" href="#home">Rubenisme</a>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<style>
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background: rgba(8, 59, 119, 0.55);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(72, 202, 228, 0.2);
+  }
+
+  .logo {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #ffffff;
+    letter-spacing: 0.02em;
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+  }
+
+  ul a {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  ul a:hover {
+    color: #48cae4;
+  }
+
+  @media (max-width: 600px) {
+    nav { padding: 0.75rem 1rem; }
+    ul  { gap: 1rem; }
+    ul a { font-size: 0.85rem; }
+  }
+</style>
