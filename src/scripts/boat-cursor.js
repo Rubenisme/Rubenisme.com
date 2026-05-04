@@ -1,11 +1,11 @@
 const isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
 const boat = document.getElementById("boat");
-const canvas = document.getElementById("trail");
-const ctx = canvas.getContext("2d");
 
 if (isTouchDevice) {
   boat.style.display = "none";
 } else {
+  const canvas = document.getElementById("trail");
+  const ctx = canvas.getContext("2d");
   function resize() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
