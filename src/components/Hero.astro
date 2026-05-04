@@ -1,0 +1,54 @@
+<section id="home">
+  <div class="content">
+    <h1>Rubenisme</h1>
+    <p class="tagline">Developer &amp; maker of things</p>
+  </div>
+  <div class="scroll-hint" aria-hidden="true">↓</div>
+</section>
+
+<style>
+  section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at 30% 20%, #1d7ddc 0%, #0b4c9a 35%, #083b77 100%);
+    position: relative;
+  }
+
+  .content {
+    text-align: center;
+    color: #ffffff;
+  }
+
+  h1 {
+    font-size: clamp(2.5rem, 8vw, 6rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+
+  .tagline {
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    color: rgba(255, 255, 255, 0.75);
+    font-weight: 400;
+    letter-spacing: 0.05em;
+  }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1.5rem;
+    animation: bounce 2s ease-in-out infinite;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0);   }
+    50%       { transform: translateX(-50%) translateY(8px); }
+  }
+</style>
