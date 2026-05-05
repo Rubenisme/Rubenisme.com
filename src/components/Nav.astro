@@ -20,8 +20,9 @@
     transform: translateX(-50%);
     z-index: 100;
     display: flex;
-    align-items: center;
-    padding: 0.85rem 1.5rem 1.2rem;
+    align-items: stretch;
+    /* Right padding removed — button takes it over so the whole right area is clickable */
+    padding: 0.85rem 0 0.85rem 1.8rem;
     background: rgba(8, 59, 119, 0.6);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
@@ -32,11 +33,12 @@
 
   /* Restore visible cursor over the nav pill */
   nav, nav * { cursor: auto !important; }
-  nav a, nav button { cursor: pointer !important; }
+  nav a, nav button, nav button * { cursor: pointer !important; }
 
   ul {
     list-style: none;
     display: flex;
+    align-items: center;
     gap: 1.75rem;
   }
 
@@ -52,15 +54,23 @@
     color: #48cae4;
   }
 
+  /* Button stretches to pill height and owns the right padding */
   #theme-toggle {
     display: flex;
     align-items: center;
     gap: 5px;
     background: none;
     border: none;
-    padding: 0.6rem 0.4rem 0.6rem 1rem;
+    align-self: stretch;
+    padding: 0 1.8rem 0 1rem;
     margin-left: 0.5rem;
     border-left: 1px solid rgba(72, 202, 228, 0.25);
+    border-radius: 0 999px 999px 0;
+    transition: background 0.15s;
+  }
+
+  #theme-toggle:hover {
+    background: rgba(72, 202, 228, 0.08);
   }
 
   .theme-dot {
@@ -82,9 +92,9 @@
   }
 
   @media (max-width: 600px) {
-    nav { top: 0.75rem; padding: 0.7rem 1rem 1rem; }
+    nav { top: 0.75rem; padding: 0.7rem 0 0.7rem 1rem; }
     ul  { gap: 1rem; }
     ul a { font-size: 0.82rem; }
-    #theme-toggle { padding-left: 0.75rem; }
+    #theme-toggle { padding: 0 1rem 0 0.75rem; }
   }
 </style>
