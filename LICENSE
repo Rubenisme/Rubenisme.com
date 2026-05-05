@@ -1,0 +1,24 @@
+Copyright (c) 2025 Ruben A (rubenisme.com). All Rights Reserved.
+
+This repository contains the source code for a personal website. The code is
+made publicly visible for transparency and inspiration, but is NOT licensed for
+reuse, redistribution, or incorporation into other projects.
+
+RESTRICTIONS
+
+- You may NOT copy, modify, merge, publish, distribute, sublicense, or sell
+  any part of this code or its assets.
+- You may NOT use the boat cursor design, animation, or implementation
+  (including any part of `src/scripts/boat-cursor.js` and its accompanying
+  HTML/CSS) in any other website, application, or project.
+- You may NOT use any artwork, visual designs, or original creative assets
+  from this repository in any other context.
+
+PERMITTED
+
+- You MAY view and read the source code for personal educational purposes.
+- You MAY link to or reference this repository.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND. THE AUTHOR
+SHALL NOT BE LIABLE FOR ANY CLAIM, DAMAGES, OR LIABILITY ARISING FROM THE USE
+OR INABILITY TO USE THIS SOFTWARE.
