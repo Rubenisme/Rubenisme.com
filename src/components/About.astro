@@ -8,15 +8,19 @@
         <p>
           I build software — from web apps and automation tools to personal projects
           that scratch an itch. I enjoy the full stack: designing clean interfaces,
-          writing reliable back-end logic, and connecting the two.
+          writing reliable back-end logic, and connecting the two. I believe in using
+          the right tool for the job, though sometimes the fun is in the overkill:
+          training reinforcement learning agents (Rainbow DQN, PPO) for problems that
+          probably didn't need them, or wiring an LLM into a decision engine precisely
+          where its reasoning fills the gaps.
         </p>
         <ul class="skills">
+          <li>C# / .NET</li>
           <li>JavaScript / TypeScript</li>
-          <li>Astro / Svelte</li>
-          <li>Python</li>
-          <li>Node.js / Bun</li>
-          <li>HTML &amp; CSS</li>
-          <li>Git</li>
+          <li>Astro / Svelte / React</li>
+          <li>Python &amp; RL (PyTorch / SB3)</li>
+          <li>Other AI — CSPs &amp; beyond</li>
+          <li>Discrete Mathematics</li>
         </ul>
       </div>
 
@@ -40,7 +44,7 @@
 <style>
   section {
     padding: 6rem 2rem;
-    background: #f4f8fb;
+    background: var(--bg-page);
   }
 
   .container {
@@ -51,7 +55,7 @@
   h2 {
     font-size: 2rem;
     font-weight: 700;
-    color: #083b77;
+    color: var(--text-heading);
     margin-bottom: 3rem;
   }
 
@@ -72,7 +76,7 @@
 
   p {
     line-height: 1.7;
-    color: #0d1b2a;
+    color: var(--text-primary);
     margin-bottom: 1.5rem;
   }
 
@@ -84,8 +88,8 @@
   }
 
   .skills li {
-    background: #083b77;
-    color: #ffffff;
+    background: var(--pill-bg);
+    color: var(--pill-text);
     font-size: 0.8rem;
     padding: 0.25rem 0.75rem;
     border-radius: 999px;

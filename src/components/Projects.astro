@@ -3,22 +3,22 @@ import ProjectCard from './ProjectCard.astro';
 
 const projects = [
   {
-    name: 'Boat Cursor',
-    description: 'Interactive SVG boat cursor with a canvas-based wake trail effect.',
+    name: 'Unscrambler',
+    description: 'NS train station anagram unscrambler — enter scrambled letters and find which Dutch station matches.',
     status: 'built' as const,
-    url: 'https://github.com/yourusername/boat-cursor',
+    url: 'https://github.com/Rubenisme/Unscrambler',
   },
   {
-    name: 'Project Two',
-    description: 'Short description of this project.',
+    name: 'Audio Looper',
+    description: 'Turn any song into a smooth, long-form audio loop — analyzes waveform structure to find seamless loop points.',
     status: 'built' as const,
-    isPrivate: true,
+    url: 'https://github.com/Rubenisme/audiolooper',
   },
   {
     name: 'Project Three',
     description: 'Short description of this project.',
     status: 'built' as const,
-    url: 'https://github.com/yourusername/project-three',
+    isPrivate: true,
   },
   {
     name: 'Project Four',
@@ -27,10 +27,10 @@ const projects = [
     isPrivate: true,
   },
   {
-    name: 'Project Five',
-    description: 'Short description of this project.',
+    name: 'This Website',
+    description: 'Personal portfolio built with Astro + Bun, featuring a boat cursor with canvas wake trail and a 3-theme switcher.',
     status: 'in-progress' as const,
-    url: 'https://github.com/yourusername/project-five',
+    url: 'https://github.com/Rubenisme',
   },
   {
     name: 'Project Six',
@@ -42,7 +42,7 @@ const projects = [
     name: 'Project Seven',
     description: 'Short description of this project.',
     status: 'in-progress' as const,
-    url: 'https://github.com/yourusername/project-seven',
+    isPrivate: true,
   },
   {
     name: 'Project Eight',
@@ -65,7 +65,7 @@ const projects = [
 <style>
   section {
     padding: 6rem 2rem;
-    background: #eef4fa;
+    background: var(--bg-alt);
   }
 
   .container {
@@ -76,7 +76,7 @@ const projects = [
   h2 {
     font-size: 2rem;
     font-weight: 700;
-    color: #083b77;
+    color: var(--text-heading);
     margin-bottom: 3rem;
   }
 

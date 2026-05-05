@@ -91,7 +91,7 @@ if (isTouchDevice) {
       ctx.lineJoin = "round";
       ctx.shadowBlur = 0;
 
-      ctx.strokeStyle = `rgba(255,255,255,${alpha * 0.4})`;
+      ctx.strokeStyle = `rgba(125,211,252,${alpha * 0.4})`;
       ctx.beginPath(); ctx.moveTo(lx1, ly1); ctx.lineTo(lx2, ly2); ctx.stroke();
       ctx.beginPath(); ctx.moveTo(rx1, ry1); ctx.lineTo(rx2, ry2); ctx.stroke();
 

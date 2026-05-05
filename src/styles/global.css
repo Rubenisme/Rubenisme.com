@@ -4,26 +4,65 @@
   padding: 0;
 }
 
+/* ─── Brand palette (fixed across all themes) ─────────────────────────── */
 :root {
   --color-deep-water:   #083b77;
   --color-mid-water:    #0b4c9a;
   --color-sky-water:    #1d7ddc;
   --color-lagoon:       #48cae4;
   --color-lagoon-muted: #90e0ef;
-  --color-sand:         #f4f8fb;
-  --color-sand-dark:    #eef4fa;
-  --color-navy-text:    #0d1b2a;
-  --color-muted-text:   #4a5568;
-  --color-white:        #ffffff;
 
   --font-sans: system-ui, -apple-system, 'Segoe UI', sans-serif;
 }
 
+/* ─── Tropics (light, default) ──────────────────────────────────────────── */
+:root {
+  --bg-page:      #f4f8fb;
+  --bg-alt:       #eef4fa;
+  --surface:      #ffffff;
+  --text-primary: #0d1b2a;
+  --text-muted:   #4a5568;
+  --text-heading: #083b77;
+  --border:       rgba(8, 59, 119, 0.12);
+  --pill-bg:      #083b77;
+  --pill-text:    #ffffff;
+  --contact-fg:   #0b4c9a;
+}
+
+/* ─── Deep (dark ocean navy) ────────────────────────────────────────────── */
+[data-theme="deep"] {
+  --bg-page:      #0d1f35;
+  --bg-alt:       #0a1628;
+  --surface:      #112040;
+  --text-primary: #d4eeff;
+  --text-muted:   #7fb4d4;
+  --text-heading: #90e0ef;
+  --border:       rgba(72, 202, 228, 0.15);
+  --pill-bg:      rgba(72, 202, 228, 0.18);
+  --pill-text:    #90e0ef;
+  --contact-fg:   #7ec8e3;
+}
+
+/* ─── Midnight (near-black, vivid teal) ─────────────────────────────────── */
+[data-theme="midnight"] {
+  --bg-page:      #080e1a;
+  --bg-alt:       #050a12;
+  --surface:      #0d1526;
+  --text-primary: #e0f4ff;
+  --text-muted:   #6ab0d0;
+  --text-heading: #48cae4;
+  --border:       rgba(72, 202, 228, 0.2);
+  --pill-bg:      rgba(72, 202, 228, 0.12);
+  --pill-text:    #48cae4;
+  --contact-fg:   #48cae4;
+}
+
+/* ─── Base ──────────────────────────────────────────────────────────────── */
 html {
   scroll-behavior: smooth;
   font-family: var(--font-sans);
-  color: var(--color-navy-text);
-  background-color: var(--color-sand);
+  color: var(--text-primary);
+  background-color: var(--bg-page);
 }
 
 body {
@@ -35,7 +74,7 @@ a {
   text-decoration: none;
 }
 
-/* Boat cursor */
+/* ─── Boat cursor ───────────────────────────────────────────────────────── */
 * {
   cursor: none !important;
 }
@@ -59,12 +98,12 @@ canvas#trail {
   filter: drop-shadow(0px 8px 6px rgba(8, 59, 119, 0.4));
 }
 
-@media (pointer: coarse) {
-  canvas#trail, #boat { display: none; }
-}
-
 #boat svg {
   width: 100%;
   height: 100%;
   display: block;
+}
+
+@media (pointer: coarse) {
+  canvas#trail, #boat { display: none; }
 }

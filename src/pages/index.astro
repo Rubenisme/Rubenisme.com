@@ -13,6 +13,9 @@ import Footer   from '../components/Footer.astro';
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rubenisme</title>
+    <script is:inline>
+      document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'light');
+    </script>
   </head>
   <body>
     <div id="boat">
@@ -39,6 +42,7 @@ import Footer   from '../components/Footer.astro';
 
     <script>
       import '../scripts/boat-cursor.js';
+      import '../scripts/theme-toggle.js';
     </script>
   </body>
 </html>
