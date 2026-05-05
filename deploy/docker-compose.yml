@@ -1,0 +1,48 @@
+# ── Personal Website ─────────────────────────────────────────────────────────
+#
+# Traefik (see qromguard-deploy/traefik/) handles SSL and routing.
+# Requires the shared `traefik_proxy` network to exist on the host.
+#
+# Usage:
+#   docker compose up -d
+
+services:
+  personal-website:
+    image: ghcr.io/rubenisme/newpersonalwebsite:latest
+    expose:
+      - "8080"
+    labels:
+      - "traefik.enable=true"
+      # Apex domain
+      - "traefik.http.routers.personal-website.rule=Host(`rubenisme.com`)"
+      - "traefik.http.routers.personal-website.entrypoints=websecure"
+      - "traefik.http.routers.personal-website.tls=true"
+      - "traefik.http.routers.personal-website.tls.certresolver=letsencrypt"
+      - "traefik.http.services.personal-website.loadbalancer.server.port=8080"
+      # www → apex redirect
+      - "traefik.http.routers.personal-website-www.rule=Host(`www.rubenisme.com`)"
+      - "traefik.http.routers.personal-website-www.entrypoints=websecure"
+      - "traefik.http.routers.personal-website-www.tls=true"
+      - "traefik.http.routers.personal-website-www.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.personal-website-www.middlewares=personal-website-www-redirect"
+      - "traefik.http.middlewares.personal-website-www-redirect.redirectregex.regex=^https://www\\.rubenisme\\.com/(.*)"
+      - "traefik.http.middlewares.personal-website-www-redirect.redirectregex.replacement=https://rubenisme.com/$${1}"
+      - "traefik.http.middlewares.personal-website-www-redirect.redirectregex.permanent=true"
+    networks:
+      - traefik_proxy
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    read_only: true
+    tmpfs:
+      - /tmp
+      - /var/cache/nginx
+      - /var/run
+    mem_limit: 32m
+    cpus: 0.1
+
+networks:
+  traefik_proxy:
+    external: true
