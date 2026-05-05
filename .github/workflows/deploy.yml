@@ -44,6 +44,7 @@ jobs:
           username: ${{ secrets.USER }}
           key: ${{ secrets.SSH_KEY }}
           script: |
+            echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
             mkdir -p ~/personal-website-deploy
             curl -fsSL https://raw.githubusercontent.com/${{ github.repository }}/main/deploy/docker-compose.yml \
               -o ~/personal-website-deploy/docker-compose.yml
