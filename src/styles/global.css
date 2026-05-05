@@ -12,7 +12,8 @@
   --color-lagoon:       #48cae4;
   --color-lagoon-muted: #90e0ef;
 
-  --font-sans: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-sans:    'DM Sans', system-ui, sans-serif;
+  --font-heading: 'Space Grotesk', system-ui, sans-serif;
 }
 
 /* ─── Tropics (light, default) ──────────────────────────────────────────── */
@@ -67,6 +68,10 @@ html {
 
 body {
   min-height: 100vh;
+}
+
+h1, h2 {
+  font-family: var(--font-heading);
 }
 
 a {
