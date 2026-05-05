@@ -84,6 +84,10 @@ a {
   cursor: none !important;
 }
 
+footer, footer * {
+  cursor: auto !important;
+}
+
 canvas#trail {
   position: fixed;
   inset: 0;
